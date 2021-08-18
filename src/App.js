@@ -1,42 +1,52 @@
 import React from "react";
 
+const foodILike = [
+  {
+    id: 1,
+    name: "Kimchi",
+    image:
+      "http://aeriskitchen.com/wp-content/uploads/2008/09/kimchi_bokkeumbap_02-.jpg",
+  },
+  {
+    id: 2,
+    name: "Samgyeopsal",
+    image:
+      "https://3.bp.blogspot.com/-hKwIBxIVcQw/WfsewX3fhJI/AAAAAAAAALk/yHxnxFXcfx4ZKSfHS_RQNKjw3bAC03AnACLcBGAs/s400/DSC07624.jpg",
+  },
+  {
+    id: 3,
+    name: "Bibimbap",
+    image:
+      "http://cdn-image.myrecipes.com/sites/default/files/styles/4_3_horizontal_-_1200x900/public/image/recipes/ck/12/03/bibimbop-ck-x.jpg?itok=RoXlp6Xb",
+  },
+  {
+    id: 4,
+    name: "Doncasu",
+    image:
+      "https://s3-media3.fl.yelpcdn.com/bphoto/7F9eTTQ_yxaWIRytAu5feA/ls.jpg",
+  },
+  {
+    id: 5,
+    name: "Kimbap",
+    image:
+      "http://cdn2.koreanbapsang.com/wp-content/uploads/2012/05/DSC_1238r-e1454170512295.jpg",
+  },
+];
+
 function Food({ name, picture }) {
   return (
     <div>
       <h2>I like {name}</h2>
-      <img src={picture} />
+      <img src={picture} alt={name} />
     </div>
   );
 }
-
-const foodILike = [
-  {
-    name: "kimchi",
-    image:
-      "https://img.koreatimes.co.kr/upload/newsV2/images/202106/33eeb68d6b124dc8aab0574ec30cb999.jpg/dims/resize/740/optimize",
-  },
-  {
-    name: "pizza",
-    image:
-      "https://bigseventravel.com/wp-content/uploads/2019/11/paulie-1024x727.png",
-  },
-  {
-    name: "samgyupsal",
-    image:
-      "https://images.squarespace-cdn.com/content/v1/5d3a4c1ae616af0001b2aa15/1588961718684-DIYJIW3RL7361B6VDM0X/pork+belly.jpg?format=1000w",
-  },
-  {
-    name: "kimbap",
-    image:
-      "https://www.seriouseats.com/thmb/o94pqlhYlIMrT3KFLIPhs09chDo=/1500x1125/filters:fill(auto,1)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2020__01__20200122-gimbap-vicky-wasik-24-f5ed1075f35846a29e0812ee053a1bf8.jpg",
-  },
-];
 
 function App() {
   return (
     <div>
       {foodILike.map((dish) => (
-        <Food name={dish.name} picture={dish.image} />
+        <Food key={dish.id} name={dish.name} picture={dish.image} />
       ))}
     </div>
   );
