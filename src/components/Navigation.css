@@ -15,8 +15,8 @@
 @media screen and (max-width: 1090px) {
   .nav {
     left: initial;
-    top: 0px;
-    bottom: initial;
+    top: initial;
+    bottom: 0px;
     width: 100%;
   }
 }
